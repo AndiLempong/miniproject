@@ -28,7 +28,8 @@
             <h3 style="text-align:center; color:red;">"Cerdas,Santun,Berbudi Luhur"</h3>
             <p style="text-align:center; color:white;">Jl. Kemantren Raya No.5, RT.02/RW.04, Wonosari, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 5018 </p>
 
-        <a class="btn btn-primary" href="auth">Login</a>
+            <a class="btn btn-danger" href="<?php echo base_url('auth/register') ?>">Register</a>
+        <a class="btn btn-warning" href="<?php echo base_url('auth') ?>">Login</a>
     </center>
 </div>
 

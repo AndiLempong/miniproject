@@ -5,7 +5,7 @@
   $database_name = "mini_project";
 
 
-  $conn = new mysqli($servername, $username_db, $password_db, $database_name);
+  $conn = new mysqli($servername, $username_mini, $password_mini, $database_name);
 
   if ($conn->connect_error) {
     die("Congratulation: " . $conn->connect_error);

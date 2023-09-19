@@ -18,11 +18,6 @@ class Admin extends CI_Controller {
 
 		$this->load->view('admin/index');
 	}
-	public function navbar()
-	{
-
-		$this->load->view('admin/navbar');
-	}
 
 	public function daftarsiswa()
 	{
@@ -76,12 +71,57 @@ class Admin extends CI_Controller {
 		$this->m_model->tambah_data('siswa', $data);
 		redirect(base_url('admin/siswa'));
 	}
+
 	
 	public function ubah_siswa($id)
 	{
 		$data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();
 		$data['kelas'] = $this->m_model->get_data('kelas')->result();
 	$this->load->view('admin/ubah_siswa', $data);
+	}
+	public function aksi_login()
+	{
+	$email = $this->input->post ('email', true);
+	$password= $this->input->post ('password', true);
+	$data = [ 'email' => $email, ];
+	$query = $this->m_model->getwhere('admin', $data);
+	$result = $query->row_array();
+
+	if (!empty($result) && md5($password) === $result['password']) {
+		$data = [
+			'logged_in'   => TRUE,
+			'email'       => $result['email'],
+			'username'    => $result['username'],
+			'role'        => $result['role'],
+			'id'          => $result['id'],
+		];
+		$this->session->set_userdata($data);
+		if ($this->session->userdata('role') == 'admin') {
+			redirect(base_url()."admin");
+		} else {
+			redirect(base_url()."admin");
+		}
+	} else {
+		redirect(base_url()."auth");
+	}
+	function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('auth'));
+	}
+}
+public function register(){
+	$this->load->view('auth/register');
+}
+public function aksi_register()
+	{
+		$data = [
+			'email' => $this->input->post('email'),
+			'username' => $this->input->post('username'),
+			'password' => $this->input->post('password'),
+		];
+
+		$this->m_model->tambah_data('admin', $data);
+		redirect(base_url('auth/login'));
 	}
 }
 ?>	

@@ -19,29 +19,31 @@
    </button>
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
       <div class="offcanvas-header">
-         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃</h5>
+         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">𝐇𝐎𝐌𝐄</h5>
          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      <div class></div>
       <div class="offcanvas-body">
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">Home</a>
+               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃</a>
             </li>
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">Daftar Siswa</a>
+               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐅𝐓𝐀𝐑 𝐒𝐈𝐒𝐖𝐀</a>
             </li>
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">Daftar Guru</a>
+               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐅𝐓𝐀𝐑 𝐆𝐔𝐑𝐔</a>
             </li>
          
 
          <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Search Data" aria-label="Search">
             <button class="btn btn-info" type="submit">Search</button>
+
          </form>
       </div>
    </div>
