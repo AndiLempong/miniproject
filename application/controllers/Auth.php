@@ -8,19 +8,6 @@ class Auth extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_model');
 	}
-	public function register()
-	{
-		$this->load->view('auth/register');
-	}
-	public function index()
-	{
-		$this->load->view('auth/login');
-	} 
 	
-	function logout(){
-		$this->session->sess_destroy();
-		redirect(base_url('auth'));
-	}
 }
 
-	

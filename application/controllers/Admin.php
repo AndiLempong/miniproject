@@ -8,18 +8,36 @@ class Admin extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_model');
 		$this->load->helper('my_helper');;
-        if ($this->session->userdata('logged_in')!=true) {
-            redirect(base_url().'auth');
-        }
+        // if ($this->session->userdata('logged_in')!=true) {
+        //     redirect(base_url().'admin');
+        // }
+	}
+	public function register()
+	{
+		$this->load->view('admin/register');
+	}
+
+	public function login()
+	{
+		$this->load->view('admin/login');
+	} 
+
+	function logout(){
+		$this->session->sess_destroy();
+		redirect(base_url('admin'));
 	}
 
 	public function index()
 	{
-
 		$this->load->view('admin/index');
 	}
 
-	public function daftarsiswa()
+	public function home()
+	{
+		$this->load->view('admin/home');
+	}
+
+	public function siswa()
 	{
 		$data['siswa'] = $this->m_model->get_data('siswa')->result();
 		$this->load->view('admin/siswa', $data);
@@ -58,7 +76,7 @@ class Admin extends CI_Controller {
 		$data['kelas'] = $this->m_model->get_data('kelas')->result();
 		$this->load->view('admin/tambah_siswa', $data);
 	}
-	
+
 	public function aksi_tambah_siswa()
 	{
 		$data = [
@@ -72,7 +90,27 @@ class Admin extends CI_Controller {
 		redirect(base_url('admin/siswa'));
 	}
 
-	
+	// public function tambah_guru()
+	// {
+	// 	$data['guru'] = $this->m_model->get_data('guru')->result();
+	// 	$this->load->view('admin/tambah_guru', $data);
+	// }
+
+	// public function aksi_tambah_guru()
+	// {
+	// 	$data = [
+	// 		'nama_guru' => $this->input->post('nama'),
+	// 		'nik' => $this->input->post('nik'),
+	// 		'gender' => $this->input->post('gender'),
+	// 		'id_mapel' => $this->input->post('mapel'),
+	// 		'guru_mapel' => $this->input->post('guru'), 
+	// 	];
+		
+
+	// 	$this->m_model->tambah_data('guru', $data);
+	// 	redirect(base_url('admin/guru'));
+	// }
+
 	public function ubah_siswa($id)
 	{
 		$data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();
@@ -102,16 +140,14 @@ class Admin extends CI_Controller {
 			redirect(base_url()."admin");
 		}
 	} else {
-		redirect(base_url()."auth");
+		redirect(base_url()."admin/login");
 	}
 	function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url('auth'));
+		redirect(base_url('admin/home'));
 	}
 }
-public function register(){
-	$this->load->view('auth/register');
-}
+
 public function aksi_register()
 	{
 		$data = [
@@ -121,7 +157,7 @@ public function aksi_register()
 		];
 
 		$this->m_model->tambah_data('admin', $data);
-		redirect(base_url('auth/login'));
+		redirect(base_url('admin/login'));
 	}
 }
 ?>	

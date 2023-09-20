@@ -26,17 +26,20 @@
       <div class="offcanvas-body">
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃</a>
+               <a class="nav-link active" aria-current="page" href="">𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃</a>
             </li>
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐅𝐓𝐀𝐑 𝐒𝐈𝐒𝐖𝐀</a>
+               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/siswa') ?>">𝐃𝐀𝐅𝐓𝐀𝐑 𝐒𝐈𝐒𝐖𝐀</a>
             </li>
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
                <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐅𝐓𝐀𝐑 𝐆𝐔𝐑𝐔</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/home') ?>">Log Out</a>
             </li>
          
 

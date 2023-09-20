@@ -7,18 +7,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </head>
-<body class="bg-dark">
-  
+<style>
+  .background
+  {
+    background-color: red;
+  }
+</style>
+<body class="background">
 
-<section class="vh-100" style="background-color: #eee;">
+<section class="vh-100">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
-        <div class="card" style="widht: 50rem;">
+        <div class="card mb-3">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrasi</p>
+                <hr>
 
                 <form class="mx-1 mx-md-4" action="<?php echo base_url('Admin/aksi_register') ?>">
                   
@@ -50,14 +56,16 @@
                   <div class="form-check d-flex justify-content-center mb-5">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                     <label class="form-check-label" for="form2Example3">
-                      Sudah Punya Akun <a href="#!">Bantuan</a>
+                      Sudah Punya Akun <a href="<?php echo base_url('admin/login') ?>">Login</a>
                     </label>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" class="btn btn-danger btn-lg">Register</button>
                   </div>
-
+                  <center>
+                  <a href="<?php echo base_url('admin/home') ?>">Kembali</a>
+                  </center>
                 </form>
 
               </div>

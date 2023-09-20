@@ -27,7 +27,6 @@
                 <label for="gender" class="form-label">Gender</label>
                 <select name="gender" class="form-select">
                     <option selected value="<?php echo $data_siswa->gender ?>">
-                        <?php echo $data_siswa->gender ?>`
                 </option>
                 <option selected>Pilih Gender</option>
                 <option value="Laki-Laki">Laki-Laki</option>
@@ -47,7 +46,7 @@
                         <?php endforeach; ?>
                     </select>
                     <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-danger" type="submit">Ubah</button>
+                        <button class="btn btn-info" type="submit">Ubah</button>
                     </div>
                 </div>
             </form>
