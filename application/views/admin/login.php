@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Login Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    </head>
-    <style>
-    .background {
-        background-image: url('https://i0.wp.com/dianisa.com/wp-content/uploads/2022/11/biru-langit-hd.jpg?resize=1920%2C1080&ssl=1');
-        background-size:cover;
-    }
-    </style>
-    <body class="background">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</head>
+<style>
+  .background {
+    background-image:url('https://e1.pxfuel.com/desktop-wallpaper/286/869/desktop-wallpaper-plain-black-backgrounds-54-high-resolution-plain-colors.jpg');
+    background-size:cover;
+  }
+</style>
+<body class="background">
 
-    <section class="vh-100 gradient-custom">
+<section class="vh-100">
+  <div class="container">
     <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card bg-info text-white" style="border-radius: 5rem;">
-          <div class="card-body p-5 text-center">
+      <div class="col-lg-12 col-xl-8">
+        <div class="card text-bg-dark" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-            <div class="mb-md-5 mt-md-4 pb-5">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+                <form class="mx-1 mx-md-4" method="post" action="<?php echo base_url(); ?>Admin/aksi_login">
 
-              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="email" name="email" class="form-control" />
+                      <label class="form-label" for="form3Example3c">Your Email</label>
+                    </div>
+                  </div>
 
-              <div class="form-outline form-white mb-4">
-                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                <label class="form-label" for="typeEmailX">Email</label>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="password" name="password" class="form-control" />
+                      <label class="form-label" for="form3Example4c">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <a href="<?php echo base_url('admin/register') ?>">Register</a>
+                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                  </div>
+
+                </form>
+
               </div>
-
-              <div class="form-outline form-white mb-4">
-                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                <label class="form-label" for="typePasswordX">Password</label>
-              </div>
-
-              <button class="btn btn-outline-dark btn-lg px-5" type="submit">Login</button>
-              <br>
-              <br>
-<p class="text-dark">Belum punya <a href="<?php echo base_url('admin/register') ?>"class="text-dark">Akun??</a></p>
-<a href="<?php echo base_url('admin/home') ?>">Kembali</a>
-
+             
             </div>
-            <div>
-              </p>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-    </body>
+
+</body>
 </html>

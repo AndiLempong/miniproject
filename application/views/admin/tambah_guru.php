@@ -9,7 +9,7 @@
 <body class="min-vh-100 d-flex align-items-center">
     <div class="card w-50 m-auto p-3">
         <h3 class="text-center">Data</h3>
-        <form action="<?php echo base_url('admin/aksi_tambah_siswa') ?>"
+        <form action="<?php echo base_url('Admin/aksi_tambah_guru') ?>"
         enctype="multipart/form-data"
         method="post" class="row">
             <div class="mb-3 col-6">
@@ -17,28 +17,22 @@
                 <input type="text" class="form-control" id="nama" name="nama">
             </div>
             <div class="mb-3 col-6">
-                <label for="nisn" class="form-label">NISN</label>
-                <input type="text" class="form-control" id="nisn" name="nisn">
+                <label for="nik" class="form-label">NIK</label>
+                <input type="text" class="form-control" id="nik" name="nik">
             </div>
             <div class="mb-3 col-6">
-                <label for="mapepl" class="form-label">Mapel</label>
-                <select name="mapel" class="form-select">
-                    <option selected>Pilih Mapel</option>
-                    <option value="TIK">TIK</option>
+                <label for="gender" class="form-label">Gender</label>
+                <select name="gender" class="form-select">
+                    <option selected>Pilih Gender</option>
+                    <option value="Pria">Pria</option>
+                    <option value="Wanita">Wanita</option>
                 </select>
             </div>
             <div class="mb-3 col-6">
-                <label for="kelas" class="form-label">Kelas</label>
-                <select name="id_kelas" class="form-select">
-                    <option selected>Pilih Guru</option>
-                    <?php foreach($guru as $row): ?>
-                    <option value="<?php echo $row->id ?>">
-                    <?php echo $row->id_mapel.' '.$row->guru_mapel; ?>
-                    </option>
-                    <?php endforeach; ?>
-                </select>
+            <label for="mapel" class="form-label">Mapel</label>
+            <input type="text" class="form-control" name="mapel" id="mapel">
                 <div class="d-grid gap-2 d-md-block">
-                <button class="btn btn-primary" type="submit">Ubah</button>
+                <button class="btn btn-primary" type="submit">Tambah</button>
                 </div>
                 </div>
         </form>

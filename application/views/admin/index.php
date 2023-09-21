@@ -6,10 +6,15 @@
    <title>Document</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
+<style>
+.background{
+   background-color:darkgray;
+   background-size: cover;
+}
+</style>
 </head>
 </head>
-<body>
+<body class="background">
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
    <div class="container-fluid">
@@ -26,7 +31,7 @@
       <div class="offcanvas-body">
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="">𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃</a>
+               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/dashboard') ?>">𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃</a>
             </li>
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -36,10 +41,10 @@
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐅𝐓𝐀𝐑 𝐆𝐔𝐑𝐔</a>
+               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/guru') ?>">𝐃𝐀𝐅𝐓𝐀𝐑 𝐆𝐔𝐑𝐔</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/home') ?>">Log Out</a>
+               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/home') ?>">LOG-OUT</a>
             </li>
          
 

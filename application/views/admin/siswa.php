@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    < <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </head>
 
 <body class="min-vh-100 d-flex align-items-center">
@@ -34,7 +34,7 @@
 
          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-               <a class="nav-link active" aria-current="page" href="#">𝐃𝐀𝐅𝐓𝐀𝐑 𝐆𝐔𝐑𝐔</a>
+               <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/guru') ?>">𝐃𝐀𝐅𝐓𝐀𝐑 𝐆𝐔𝐑𝐔</a>
             </li>
             <li class="nav-item">
                <a class="nav-link active" aria-current="page" href="<?php echo base_url('admin/home') ?>">Log Out</a>
@@ -74,19 +74,19 @@
                <?php echo tampil_full_kelas_byid($row->id_kelas) ?>
          </td>
                <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                  <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>" class="btn btn-danger">Ubah</a>
-            <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
+                  <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>" class="btn btn-secondary">Ubah</a>
+            <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-dark">Hapus</button>
          
          </td>
       </tr><?php endforeach ?>
    </table>
-  <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-primary">Tambah</a>
+  <a href="<?php echo base_url('admin/tambah_siswa') ?>" class="btn btn-light">Tambah</a>
 </div>
 </tbody>
 </html>
     <script>
         function hapus(id) {
-            var yes = confirm('Benar Anda Ingin Menghapus Nya?');
+            var yes = confirm('Benar Anda Ingin Menghapus?');
             if (yes == true) {
                 window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
             }
