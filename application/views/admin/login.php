@@ -45,15 +45,14 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <a href="<?php echo base_url('admin/register') ?>">Register</a>
+
                     <button type="submit" class="btn btn-primary btn-lg">Login</button>
                   </div>
 
                 </form>
-
               </div>
-             
             </div>
+            <a href="<?php echo base_url('admin/register') ?>">Register</a>
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@
 
          <form class="d-flex mt-3" role="search">
             <input class="form-control me-2" type="search" placeholder="Search Data" aria-label="Search">
-            <button class="btn btn-info" type="submit">Search</button>
+            <button class="btn btn-secondary" type="submit">Search</button>
 
          </form>
       </div>
