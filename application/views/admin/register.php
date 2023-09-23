@@ -47,6 +47,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="password" id="password" name="password" class="form-control" />
                       <label class="form-label" for="form3Example4c">Password</label>
+
                     </div>
                   </div>
 
@@ -55,11 +56,10 @@
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" class="btn btn-primary btn-lg">Register</button>
                   </div>
-
+                  
                 </form>
 
               </div>
-             
             </div>
           </div>
         </div>

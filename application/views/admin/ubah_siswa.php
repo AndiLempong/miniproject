@@ -34,17 +34,17 @@
                 </select>
             </div>
             <div class="mb-3 col-6">
-                <label for="kelas" class="form-label">Kelas</label>
-                <select name="id_kelas" class="form-select">
-                    <option selected value="<?php echo $data_siswa->id_kelas ?>">
-                    <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
-                    </option>
-                    <?php foreach($kelas as $row): ?>
-                        <option value="<?php echo $row->id ?>">
-                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas; ?>
-                        </option>
-                        <?php endforeach; ?>
-                    </select>
+                        <label for="kelas" class="form-label">Kelas</label>
+                        <select name="kelas" class="form-select">
+                            <option selected value="<?php echo $data_siswa->id_kelas ?>">
+                                <?php echo tampil_full_kelas_byid($data_siswa->id_kelas) ?>
+                            </option>
+                            <?php foreach ($kelas as $row) : ?>
+                            <option value="<?php $row->id ?>">
+                                <?php echo $row->tingkat_kelas . ' ' . $row->jurusan_kelas ?>
+                            </option>
+                            <?php endforeach ?>
+                        </select>
                     <div class="d-grid gap-2 d-md-block">
                         <button class="btn btn-info" type="submit">Ubah</button>
                     </div>
