@@ -24,8 +24,8 @@
                 <label for="gender" class="form-label">Gender</label>
                 <select name="gender" class="form-select">
                     <option selected>Pilih Gender</option>
-                    <option value="Pria">Pria</option>
-                    <option value="Wanita">Wanita</option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
                 </select>
             </div>
             <div class="mb-3 col-6">

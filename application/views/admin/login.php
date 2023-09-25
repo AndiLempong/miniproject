@@ -16,13 +16,12 @@
 <body class="background">
 
 <section class="vh-100">
-  <div class="container">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-8">
-        <div class="card text-bg-dark" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card text-bg-dark" style="border-radius: 25px;">
+            <div class="card-body p-5">
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
                 <form class="mx-1 mx-md-4" method="post" action="<?php echo base_url(); ?>Admin/aksi_login">
@@ -32,7 +31,7 @@
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
                       <input type="email" id="email" name="email" class="form-control" />
-                      <label class="form-label" for="form3Example3c">Your Email</label>
+                      <label class="form-label" for="form3Example3c">Email</label>
                     </div>
                   </div>
 
@@ -50,9 +49,9 @@
                   </div>
 
                 </form>
+                <a href="<?php echo base_url('admin/register') ?>">Register</a>
               </div>
             </div>
-            <a href="<?php echo base_url('admin/register') ?>">Register</a>
           </div>
         </div>
       </div>

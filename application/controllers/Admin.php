@@ -29,7 +29,9 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('admin/index');
+		$data['siswa']=$this->m_model->get_data('siswa')->num_rows();
+		$data['guru']=$this->m_model->get_data('guru')->num_rows();
+		$this->load->view('admin/dashboard', $data);
 	}
 
 	public function home()
@@ -62,7 +64,7 @@ class Admin extends CI_Controller {
 			'nama_siswa' => $this->input->post('nama'),
 			'nisn' => $this->input->post('nisn'),
 			'gender' => $this->input->post('gender'),
-			'id_kelas' =>$this->input->post('kelas'),
+			'id_kelas' =>$this->input->post('id_kelas'),
 		);
 		$eksekusi=$this->m_model->ubah_data('siswa', $data, array('id_siswa'=>$this->input->post('id_siswa')));
 		if($eksekusi)
@@ -73,7 +75,7 @@ class Admin extends CI_Controller {
 		else
 		{
 			$this->session->set_flashdata('error', 'gagal..');
-			redirect(base_url('admin/aksi_ubah_siswa/'.$this->input->post('id_siswa')));
+			redirect(base_url('admin/ubah_siswa/'.$this->input->post('id_siswa')));
 		}
 	}
 
@@ -140,7 +142,7 @@ public function aksi_ubah_guru()
 
 public function tambah_guru()
 {
-	$data['kelas'] = $this->m_model->get_data('kelas')->result();
+	$data['mapel'] = $this->m_model->get_data('mapel')->result();
 	$this->load->view('admin/tambah_guru', $data);
 }
 
@@ -179,7 +181,6 @@ public function aksi_login()
 	$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 	Password anda salah
 	
-  
 	</div>');
 	redirect(base_url('admin/login'));
   }
@@ -188,14 +189,20 @@ public function aksi_login()
 
 public function aksi_register()
 	{
-		$data = [
-			'email' => $this->input->post('email'),
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password'),
-		];
+		$password= $this->input->post('password');
+		if (strlen($password < 8)) {
+			redirect(base_url('admin/register'));
+		}else{
 
-		$this->m_model->tambah_data('admin', $data);
-		redirect(base_url('admin/login'));
+			$data = [
+				'email' => $this->input->post('email'),
+				'username' => $this->input->post('username'),
+				'password' => md5($this->input->post('password')),
+			];
+			
+			$this->m_model->tambah_data('admin', $data);
+			redirect(base_url('admin/login'));
+		}
 	}
 
 	public function dashboard()
@@ -206,4 +213,4 @@ public function aksi_register()
 		$this->load->view('admin/dashboard',$data);
 	}
 }
-?>	.
+?>
